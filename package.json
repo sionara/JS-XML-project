@@ -1,0 +1,19 @@
+{
+  "name": "js-xml-project",
+  "version": "1.0.0",
+  "description": "An web app that informs users about the weather conditions at a particular football match.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.1",
+    "luxon": "^3.4.4",
+    "nodemon": "^3.1.0",
+    "pug": "^3.0.2"
+  }
+}
