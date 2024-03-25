@@ -2,16 +2,20 @@ extends common/layout
 
 block main-content 
   h1 List of football matches happening today from different fixtures
-    .container
-      if (!fixturesData)
-        h1 Could not fetch the data from the API 
+  .container
+    div.list-group
+      if !fixturesData
+        h3 Could not fetch the data from the API 
       else
         for fixture in fixturesData 
           - let homeTeam = fixture.teams.home.name;
           - let awayTeam = fixture.teams.away.name;
-          - let venue = fixture.fixture.venue.name;
+          - let venue = fixture.fixture.venue?.name;
           - let city = fixture.fixture.venue.city;
-          div
-            a(href=`/${city}`) #{homeTeam} vs #{awayTeam} @ #{venue}
+
+          if venue === null  
+            a(href=`/${city}` class="list-group-item list-group-item-action disabled") #{homeTeam} vs #{awayTeam} @#[em(style="color: red") To Be Determined]
+          else 
+            a(href=`/${city}` class="list-group-item list-group-item-action") #{homeTeam} vs #{awayTeam} @#[em(style="color: green") #{venue}] 
 
 

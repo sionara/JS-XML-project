@@ -7,8 +7,7 @@ dotenv.config();
 const port = process.env.PORT || "3000";
 
 //routers
-const footballRouter = require("./modules/football/routes");
-const weatherRouter = require("./modules/weather/routes");
+const Router = require("./modules/routes");
 
 // path for views
 app.set("views", path.join(__dirname, "views"));
@@ -21,10 +20,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//api handlers
-
-app.use("/", footballRouter);
-app.use("/", weatherRouter);
+//routes
+app.use("/", Router);
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);

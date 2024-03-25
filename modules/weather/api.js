@@ -17,7 +17,7 @@ async function getCityWeather(_cityName) {
       return data;
     })
     .catch((error) => {
-      return error;
+      return null;
     });
 }
 
