@@ -1,4 +1,4 @@
-const apiKey = "5660bf8eb9d6acb8c94d79ed2f2d755f";
+const apiKey = process.env.WEATHER_API_KEY;
 
 //functions
 

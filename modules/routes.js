@@ -17,6 +17,7 @@ Router.get("/", async (req, res) => {
 
 Router.get("/:cityName", async (req, res) => {
   let weatherData = await weatherApi.getCityWeather(req.params.cityName);
+  // console.log(weatherData);
   if (weatherData == null) {
     res.render("weather", { weatherData: "Could not be fetched by API" });
   } else {

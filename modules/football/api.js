@@ -1,4 +1,4 @@
-const apiKey = "df8542ae11130c4285104f9ddea6583c";
+const apiKey = process.env.FOOTBALL_API_KEY;
 
 const date = require("luxon");
 
